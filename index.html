@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Optimization -->
+    <title>Aman Sahu | Portfolio - High-Conversion Web Designer & Developer</title>
+    <meta name="description"
+        content="Premium portfolio of Aman Sahu, web designer and developer. Designs that move fast, sell smart, and never sleep. High-converting Framer-style landing pages.">
+    <meta name="keywords"
+        content="web designer, developer, Framer portfolio, high-conversion landing page, Ashir portfolio, portfolio website">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FontAwesome & Icon Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- CUSTOM MOUSE CURSOR -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div class="custom-cursor-follower" id="custom-cursor-follower"></div>
+
+    <!-- PRELOADER SCREEN -->
+    <div id="preloader">
+        <div class="preloader-logo" id="preloader-logo">Aman Sahu</div>
+        <div class="preloader-track">
+            <div class="preloader-bar" id="preloader-bar"></div>
+        </div>
+        <div class="preloader-percent" id="preloader-percent">0%</div>
+    </div>
+
+    <!-- BACKGROUND EFFECTS -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- FLOATING CENTERED BOTTOM DOCK (PRIMARY NAV) -->
+    <div class="bottom-dock-wrapper">
+        <nav class="bottom-dock glass-card">
+            <a href="#hero" class="dock-link active" title="Home">
+                <i class="fa-solid fa-house"></i>
+                <span class="dock-label">Home</span>
+            </a>
+            <a href="#web-projects" class="dock-link" title="Web Projects">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span class="dock-label">Web</span>
+            </a>
+            <a href="#video-projects" class="dock-link" title="Video Creative">
+                <i class="fa-solid fa-clapperboard"></i>
+                <span class="dock-label">Videos</span>
+            </a>
+            <a href="#services" class="dock-link" title="Services">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span class="dock-label">Services</span>
+            </a>
+            <a href="#experience" class="dock-link" title="Experience">
+                <i class="fa-solid fa-briefcase"></i>
+                <span class="dock-label">Journey</span>
+            </a>
+            <a href="#testimonials" class="dock-link" title="Testimonials">
+                <i class="fa-solid fa-star"></i>
+                <span class="dock-label">Reviews</span>
+            </a>
+            <a href="#contact" class="dock-link" title="Contact">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="dock-label">Contact</span>
+            </a>
+
+            <div class="dock-divider"></div>
+
+            <!-- Theme Toggler (Capsule Switcher) -->
+            <div class="theme-switch-container">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-toggle-pill"></span>
+                    <span class="theme-toggle-icon active" data-theme="dark"><i class="fa-solid fa-moon"></i></span>
+                    <span class="theme-toggle-icon" data-theme="light"><i class="fa-solid fa-sun"></i></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- MAIN PAGE CONTAINER -->
+    <main>
+
+        <!-- 1. HERO / HEADER INTEGRATED SECTION -->
+        <section id="hero">
+            <div class="container hero-container-framer">
+
+                <!-- Profile Avatar & Social Header Row -->
+                <div class="hero-top-profile">
+                    <div class="profile-card-widget">
+                        <img src="" id="hero-avatar" class="profile-avatar-img" alt="Aman Sahu">
+                        <div class="profile-avatar-details">
+                            <h2 id="hero-name-header">Ashir</h2>
+                            <p id="hero-title-header">Web Designer & Developer</p>
+                        </div>
+                    </div>
+
+                    <div class="social-cards-wrapper" id="social-links-wrapper">
+                        <!-- Dynamic social buttons loaded via JS -->
+                    </div>
+                </div>
+
+                <!-- Satisfied Customers Badge -->
+                <div class="satisfied-customers-badge">
+                    <div class="stars-row">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span id="hero-satisfied-label">50+ Satisfied Customers</span>
+                </div>
+
+                <!-- Headline & Intro -->
+                <div class="hero-text-block">
+                    <h1 class="hero-headline-framer" id="hero-headline">Designs that move fast, sell smart, and never
+                        sleep.</h1>
+                    <p class="hero-subtitle-framer" id="hero-subtitle">I design experiences that captivate audiences and
+                        turn every interaction into action.</p>
+
+                    <!-- Dynamic Profile Statistics Row -->
+                    <div class="hero-stats-row">
+                        <div class="hero-stat-item">
+                            <span class="stat-num" id="hero-stat-exp">5+</span>
+                            <span class="stat-label">Years of Experience</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-num" id="hero-stat-proj">120+</span>
+                            <span class="stat-label">Completed Projects</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <span class="stat-num" id="hero-stat-clients">80+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-contact-pill">Contact Me Now <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2. PROJECTS SECTION (TABLET FRAMES) -->
+        <section id="web-projects">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Projects</span>
+                    <h2 class="framer-title">Crafted to Impress, <br><span>Built to Perform</span></h2>
+                    <p class="framer-desc">Explore a showcase of designs that blend creativity, strategy, and seamless
+                        execution</p>
+                </div>
+
+                <div class="framer-projects-grid" id="website-projects-grid">
+                    <!-- JS Loaded Web Projects in Tablet Device Frames -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. VIDEO PROJECTS SECTION -->
+        <section id="video-projects">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Video Creative</span>
+                    <h2 class="framer-title">Motion Graphics & <br><span>VFX Production</span></h2>
+                    <p class="framer-desc">Curated cinema shorts, corporate advertising reels, and 3D synthwave loops
+                    </p>
+                </div>
+
+                <div class="video-projects-grid" id="video-projects-grid">
+                    <!-- Dynamic Video Projects loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SERVICES / PROCESS SECTION (FLOATING CHIPS) -->
+        <section id="services">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Process</span>
+                    <h2 class="framer-title">Services I <span>Provide</span></h2>
+                    <p class="framer-desc">We Provide All Essential Services for Crafting Effective Landing Pages</p>
+                </div>
+
+                <div class="services-process-container glass-card">
+                    <!-- Surrounding Floating Process Chips -->
+                    <div class="process-chip left-1"><i class="fa-brands fa-figma" style="color: #f24e1e;"></i> Figma
+                        Designing</div>
+                    <div class="process-chip right-1"><i class="fa-solid fa-compass-drafting"
+                            style="color: #20e982;"></i> Web Development</div>
+                    <div class="process-chip left-2"><i class="fa-solid fa-cubes" style="color: #00f3ff;"></i> 2D & 3D
+                        Animation</div>
+                    <div class="process-chip right-2"><i class="fa-solid fa-bezier-curve" style="color: #bd00ff;"></i>
+                        Graphic Design</div>
+                    <div class="process-chip left-3"><i class="fa-solid fa-code" style="color: #ffaa00;"></i> AI
+                    </div>
+                    <div class="process-chip right-3"><i class="fa-solid fa-chart-line" style="color: #ff3366;"></i>
+                        Video Editing</div>
+
+                    <!-- Center Text Block -->
+                    <div class="process-center-text">
+                        <h3>We help startups and brands build meaningful connections between their products and
+                            delighted, engaged users.</h3>
+                    </div>
+                </div>
+        </section>
+
+        <!-- 5. EXPERIENCE Timeline SECTION -->
+        <section id="experience">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Experience</span>
+                    <h2 class="framer-title">Professional <br><span>Journey & Background</span></h2>
+                    <p class="framer-desc">An overview of my career milestones, roles, and creative service history</p>
+                </div>
+
+                <div class="experience-timeline" id="experience-timeline-container">
+                    <!-- Dynamic Experience Timeline loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TOOLKIT SECTION (HORIZONTAL PROGRESS ROWS) -->
+        <section id="toolkit">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Toolkit</span>
+                    <h2 class="framer-title">Powerful Tools, <br><span>Exceptional Results</span></h2>
+                    <p class="framer-desc">Leverage cutting-edge tools and skills to bring your ideas to life with
+                        precision and impact</p>
+                </div>
+
+                <div class="toolkit-container glass-card" id="toolkit-list-wrapper">
+                    <!-- Dynamic Progress Rows loaded via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TESTIMONIALS SECTION (BREAKDOWN CHART) -->
+        <section id="testimonials">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Testimonials</span>
+                    <h2 class="framer-title">Voices of <span>Trust & Success</span></h2>
+                    <p class="framer-desc">Feedback from clients who turned their ideas into success with my expertise
+                    </p>
+                </div>
+
+                <div class="testimonials-framer-layout">
+
+                    <!-- Star Breakdown Chart Card -->
+                    <div class="testimonials-breakdown-card glass-card">
+                        <div class="breakdown-left">
+                            <span class="giant-rating">4.8</span>
+                            <span class="rating-max">/5</span>
+                            <div class="stars-row" style="justify-content: center; margin: 10px 0;">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <span class="total-reviews-count">25 Reviews</span>
+                            <div class="visionaries-avatars" style="margin-top:20px;">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&fit=crop"
+                                    class="avatar-face" alt="face1">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&fit=crop"
+                                    class="avatar-face" alt="face2">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&fit=crop"
+                                    class="avatar-face" alt="face3">
+                            </div>
+                            <p class="visionaries-label">Trusted by Visionaries<br><span
+                                    style="font-size:0.75rem; color: var(--text-muted);">Chosen by Innovators</span></p>
+                        </div>
+
+                        <div class="breakdown-right">
+                            <div class="breakdown-bar-row">
+                                <span class="star-lbl">5 Star</span>
+                                <div class="breakdown-bar-track">
+                                    <div class="breakdown-bar-fill" style="width: 72%;"></div>
+                                </div>
+                                <span class="breakdown-bar-count">18</span>
+                            </div>
+                            <div class="breakdown-bar-row">
+                                <span class="star-lbl">4 Star</span>
+                                <div class="breakdown-bar-track">
+                                    <div class="breakdown-bar-fill" style="width: 16%;"></div>
+                                </div>
+                                <span class="breakdown-bar-count">4</span>
+                            </div>
+                            <div class="breakdown-bar-row">
+                                <span class="star-lbl">3 Star</span>
+                                <div class="breakdown-bar-track">
+                                    <div class="breakdown-bar-fill" style="width: 12%;"></div>
+                                </div>
+                                <span class="breakdown-bar-count">3</span>
+                            </div>
+                            <div class="breakdown-bar-row">
+                                <span class="star-lbl">2 Star</span>
+                                <div class="breakdown-bar-track">
+                                    <div class="breakdown-bar-fill" style="width: 0%;"></div>
+                                </div>
+                                <span class="breakdown-bar-count">0</span>
+                            </div>
+                            <div class="breakdown-bar-row">
+                                <span class="star-lbl">1 Star</span>
+                                <div class="breakdown-bar-track">
+                                    <div class="breakdown-bar-fill" style="width: 0%;"></div>
+                                </div>
+                                <span class="breakdown-bar-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client Quotes Feed -->
+                    <div class="testimonials-feed" id="testimonials-feed-container">
+                        <!-- Dynamic video reviews mapped as testimonial blocks -->
+                        <div class="testimonial-bubble glass-card">
+                            <div class="bubble-header">
+                                <h4 class="bubble-client">Sarah Jenkins</h4>
+                                <span class="bubble-meta">CEO, Lumina Agency</span>
+                            </div>
+                            <div class="stars-row" style="margin: 8px 0; font-size: 0.8rem; color: #ffaa00;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="bubble-text">"Ashir redesigned our full onboarding sequence and landing pages. The
+                                conversion rates spiked by over 32% in less than three weeks! Meticulous focus and rapid
+                                execution."</p>
+                        </div>
+
+                        <div class="testimonial-bubble glass-card">
+                            <div class="bubble-header">
+                                <h4 class="bubble-client">Robert Chen</h4>
+                                <span class="bubble-meta">Marketing Lead, Nebula Labs</span>
+                            </div>
+                            <div class="stars-row" style="margin: 8px 0; font-size: 0.8rem; color: #ffaa00;">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="bubble-text">"Working with Ashir has been absolute gold. He operates at lightning
+                                speeds, handles designs directly inside Figma and Framer, and syncs timelines
+                                flawlessly."</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT SECTION -->
+        <section id="contact" style="padding-bottom: 150px;">
+            <div class="container">
+                <div class="framer-section-header">
+                    <span class="framer-badge">Connect</span>
+                    <h2 class="framer-title">Let's Work <span>Together</span></h2>
+                    <p class="framer-desc">Have a project in mind or need assistance with your landing pages? Send a
+                        message.</p>
+                </div>
+
+                <div class="framer-contact-card glass-card">
+                    <form id="portfolio-contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" class="form-input" placeholder="e.g. John Doe"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="contact-email">Email Address</label>
+                                <input type="email" id="contact-email" class="form-input" placeholder="john@example.com"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" class="form-input" placeholder="Project details"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-message">Message</label>
+                            <textarea id="contact-message" class="form-input"
+                                placeholder="Outline your project goals and deadlines..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary-framer">Send Message <i class="fa-solid fa-paper-plane"
+                                style="margin-left: 8px;"></i></button>
+                        <div class="form-alert" id="contact-form-alert"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER SECTION (Clean aesthetic, matching mockup) -->
+    <footer>
+        <div class="container footer-content-framer">
+            <div class="footer-left">
+                <div class="logo">AMAN SAHU</div>
+                <p class="footer-tagline">Web Designer & Developer</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; <span id="current-year">2026</span> Aman Sahu. All rights reserved.</p>
+                <div style="margin-top:10px; font-size: 0.8rem; color: var(--text-muted);">
+                    <a href="admin.html"
+                        style="border: 1px dashed var(--accent-purple); padding:3px 8px; border-radius:4px;"><i
+                            class="fa-solid fa-lock"></i> Admin Panel</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX FOR YOUTUBE VIDEOS -->
+    <div class="lightbox-modal" id="video-lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close-btn">&times;</button>
+            <iframe class="lightbox-iframe" id="lightbox-iframe" src="" allowfullscreen allow="autoplay"></iframe>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Main Logic Script -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Aman Sahu Portfolio</title>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Ambient Glow Background Graphics -->
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- 1. LOGIN OVERLAY (Secure hardcoded entry) -->
+    <div id="login-overlay">
+        <div class="login-card glass-container">
+            <h1 class="login-logo">AMAN SAHU</h1>
+            <p class="login-tag">Admin Dashboard</p>
+
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label class="form-label" for="login-username">Username</label>
+                    <input type="text" id="login-username" class="form-input" placeholder="Enter admin user" required
+                        autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-input" placeholder="••••••••" required
+                        autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn-primary">Authenticate <i class="fa-solid fa-key"
+                        style="margin-left: 8px;"></i></button>
+                <div class="login-error" id="login-error-msg">Invalid credentials. Please try again.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. DASHBOARD SHELL (Rendered on success) -->
+    <div id="admin-dashboard" class="glass-container">
+
+        <!-- Header Panel -->
+        <div class="admin-header glass-container">
+            <div class="admin-header-title">
+                <h1 class="admin-title-logo">AMAN SAHU</h1>
+                <span class="badge-tag">PORTFOLIO ENGINE v1.2</span>
+            </div>
+
+            <div class="header-actions">
+                <!-- Theme Toggler -->
+                <div class="theme-switch-container">
+                    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme"
+                        style="margin-right: 15px;">
+                        <span class="theme-toggle-pill"></span>
+                        <span class="theme-toggle-icon active" data-theme="dark"><i class="fa-solid fa-moon"></i></span>
+                        <span class="theme-toggle-icon" data-theme="light"><i class="fa-solid fa-sun"></i></span>
+                    </button>
+                </div>
+                <a href="index.html" target="_blank" class="btn-secondary"><i
+                        class="fa-solid fa-square-arrow-up-right"></i> View Site</a>
+                <button class="btn-secondary" id="system-reset-btn"
+                    style="border-color: var(--accent-glow-purple); color: var(--accent-purple);"><i
+                        class="fa-solid fa-rotate-left"></i> Reset Demo</button>
+            </div>
+        </div>
+
+        <!-- Dashboard Workspace Grid -->
+        <div class="admin-body">
+
+            <!-- Tab Side navigation links -->
+            <div class="admin-sidebar glass-container">
+                <div class="sidebar-tab active" data-panel="panel-profile">
+                    <i class="fa-solid fa-circle-user"></i> Profile Info
+                </div>
+                <div class="sidebar-tab" data-panel="panel-experience">
+                    <i class="fa-solid fa-briefcase"></i> Experience Timeline
+                </div>
+                <div class="sidebar-tab" data-panel="panel-skills">
+                    <i class="fa-solid fa-award"></i> Professional Skills
+                </div>
+                <div class="sidebar-tab" data-panel="panel-web-projects">
+                    <i class="fa-solid fa-laptop-code"></i> Web Projects
+                </div>
+                <div class="sidebar-tab" data-panel="panel-video-projects">
+                    <i class="fa-solid fa-video"></i> Video Creative
+                </div>
+                <div class="sidebar-tab" data-panel="panel-socials">
+                    <i class="fa-solid fa-hashtag"></i> Social Channels
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-tab logout" id="admin-logout-btn">
+                    <i class="fa-solid fa-power-off"></i> Sign Out
+                </div>
+            </div>
+
+            <!-- Workspace Dynamic Panels -->
+            <div class="admin-content glass-container" style="padding:0;">
+
+                <!-- Tab PANEL 1: PROFILE INFO -->
+                <div id="panel-profile" class="admin-content-panel active">
+                    <div class="panel-title-container">
+                        <h2 class="panel-title">Edit Profile Details</h2>
+                        <button type="submit" form="form-profile" class="btn-primary"
+                            style="width:auto; margin:0; padding:10px 24px;"><i class="fa-solid fa-floppy-disk"></i>
+                            Save Changes</button>
+                    </div>
+
+                    <form id="form-profile">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="prof-name">Full Name</label>
+                                <input type="text" id="prof-name" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="prof-title">Professional Title</label>
+                                <input type="text" id="prof-title" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="prof-avatar">Profile Avatar Image URL</label>
+                            <input type="url" id="prof-avatar" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="prof-intro">Short Introduction / Hero CTA Info</label>
+                            <input type="text" id="prof-intro" class="form-input" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="prof-about">Detailed About Description</label>
+                            <textarea id="prof-about" class="form-input" required></textarea>
+                        </div>
+
+                        <h3 style="margin: 30px 0 15px 0; font-family: var(--font-heading);">Key Statistic Numbers</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="prof-exp-num">Years of Experience</label>
+                                <input type="number" id="prof-exp-num" class="form-input" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="prof-proj-num">Completed Projects</label>
+                                <input type="number" id="prof-proj-num" class="form-input" min="0" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="prof-client-num">Happy Clients Count</label>
+                                <input type="number" id="prof-client-num" class="form-input" min="0" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tab PANEL 2: EXPERIENCE TIMELINE -->
+                <div id="panel-experience" class="admin-content-panel">
+                    <div class="panel-title-container">
+                        <h2 class="panel-title">Experience Timeline</h2>
+                        <button class="btn-primary" style="width:auto; margin:0;" onclick="openExpModal()"><i
+                                class="fa-solid fa-plus"></i> Add Event</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Period</th>
+                                    <th>Role</th>
+                                    <th>Company</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="experience-table-body">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab PANEL 3: SKILLS -->
+                <div id="panel-skills" class="admin-content-panel">
+                    <div class="panel-title-container">
+                        <h2 class="panel-title">Manage Skills</h2>
+                        <button class="btn-primary" style="width:auto; margin:0;" onclick="openSkillModal()"><i
+                                class="fa-solid fa-plus"></i> Add Skill</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Skill Name</th>
+                                    <th>Proficiency</th>
+                                    <th>Category</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="skills-table-body">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab PANEL 4: WEB PROJECTS -->
+                <div id="panel-web-projects" class="admin-content-panel">
+                    <div class="panel-title-container">
+                        <h2 class="panel-title">Manage Web Projects</h2>
+                        <button class="btn-primary" style="width:auto; margin:0;" onclick="openWebProjModal()"><i
+                                class="fa-solid fa-plus"></i> Add Project</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Thumbnail</th>
+                                    <th>Title</th>
+                                    <th>Technologies</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="web-projects-table-body">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab PANEL 5: VIDEO PROJECTS -->
+                <div id="panel-video-projects" class="admin-content-panel">
+                    <div class="panel-title-container">
+                        <h2 class="panel-title">Manage Video Portfolio</h2>
+                        <button class="btn-primary" style="width:auto; margin:0;" onclick="openVideoProjModal()"><i
+                                class="fa-solid fa-plus"></i> Add Video</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Thumbnail</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="video-projects-table-body">
+                                <!-- JS Populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab PANEL 6: SOCIAL LINKS -->
+                <div id="panel-socials" class="admin-content-panel">
+                    <div class="panel-title-container">
+                        <h2 class="panel-title">Social Channel Connections</h2>
+                        <button type="submit" form="form-socials" class="btn-primary"
+                            style="width:auto; margin:0; padding:10px 24px;"><i class="fa-solid fa-floppy-disk"></i>
+                            Save Socials</button>
+                    </div>
+
+                    <form id="form-socials">
+                        <div id="socials-inputs-container">
+                            <!-- JS Dyn Injected form fields per social connection -->
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       MODAL: ADD/EDIT EXPERIENCE
+       ========================================== -->
+    <div class="modal-overlay" id="modal-experience">
+        <div class="modal-card glass-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-exp-title">Add Timeline Event</h3>
+                <button class="modal-close" onclick="closeModal('modal-experience')">&times;</button>
+            </div>
+            <form id="form-experience">
+                <input type="hidden" id="exp-id">
+                <div class="form-group">
+                    <label class="form-label" for="exp-period">Active Period (e.g. 2024 - Present)</label>
+                    <input type="text" id="exp-period" class="form-input" placeholder="2024 - Present" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="exp-role">Role Title</label>
+                        <input type="text" id="exp-role" class="form-input" placeholder="Lead UI Engineer" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="exp-company">Company Name</label>
+                        <input type="text" id="exp-company" class="form-input" placeholder="Acme Studios" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="exp-desc">Description of Responsibilities</label>
+                    <textarea id="exp-desc" class="form-input" placeholder="Outline primary duties..."
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="exp-services">Services Offered (comma separated)</label>
+                    <input type="text" id="exp-services" class="form-input"
+                        placeholder="WebGL development, UX/UI, Prototyping">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('modal-experience')">Cancel</button>
+                    <button type="submit" class="btn-primary" style="width:auto; margin:0;">Save Event</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       MODAL: ADD/EDIT SKILL
+       ========================================== -->
+    <div class="modal-overlay" id="modal-skill">
+        <div class="modal-card glass-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-skill-title">Add Skill Entry</h3>
+                <button class="modal-close" onclick="closeModal('modal-skill')">&times;</button>
+            </div>
+            <form id="form-skill">
+                <input type="hidden" id="skill-id-ref">
+                <div class="form-group">
+                    <label class="form-label" for="skill-name">Skill Name</label>
+                    <input type="text" id="skill-name" class="form-input" placeholder="e.g. Cinema 4D" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Proficiency Level</label>
+                    <div class="range-container">
+                        <input type="range" id="skill-value" class="form-input" min="0" max="100"
+                            style="padding:0; height:8px;" oninput="updateRangeValLabel(this.value)">
+                        <span class="range-val-lbl" id="range-val-lbl">50%</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="skill-category">Category</label>
+                    <select id="skill-category" class="form-input"
+                        style="background-color: var(--bg-secondary); cursor: pointer;" required>
+                        <option value="Frontend">Frontend (Code, WebGL, Animations)</option>
+                        <option value="Creative">Creative (3D modeling, VFX, video editing)</option>
+                        <option value="Tools">Tools (Git, Figma, CLI)</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('modal-skill')">Cancel</button>
+                    <button type="submit" class="btn-primary" style="width:auto; margin:0;">Save Skill</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       MODAL: ADD/EDIT WEB PROJECT
+       ========================================== -->
+    <div class="modal-overlay" id="modal-web-project">
+        <div class="modal-card glass-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-web-title">Add Web Project</h3>
+                <button class="modal-close" onclick="closeModal('modal-web-project')">&times;</button>
+            </div>
+            <form id="form-web-project">
+                <input type="hidden" id="web-id">
+                <div class="form-group">
+                    <label class="form-label" for="web-proj-title">Project Title</label>
+                    <input type="text" id="web-proj-title" class="form-input" placeholder="Lumina agency" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="web-proj-desc">Description</label>
+                    <textarea id="web-proj-desc" class="form-input"
+                        placeholder="Describe the layout, animations and design challenges..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="web-proj-image">Image URL</label>
+                    <input type="url" id="web-proj-image" class="form-input"
+                        placeholder="https://images.unsplash.com/..." required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="web-proj-tech">Technologies (comma separated)</label>
+                        <input type="text" id="web-proj-tech" class="form-input" placeholder="Three.js, GSAP, CSS3"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="web-proj-link">Live Link URL</label>
+                        <input type="url" id="web-proj-link" class="form-input" placeholder="https://example.com"
+                            required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary"
+                        onclick="closeModal('modal-web-project')">Cancel</button>
+                    <button type="submit" class="btn-primary" style="width:auto; margin:0;">Save Project</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       MODAL: ADD/EDIT VIDEO PROJECT
+       ========================================== -->
+    <div class="modal-overlay" id="modal-video-project">
+        <div class="modal-card glass-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-video-title">Add Video Entry</h3>
+                <button class="modal-close" onclick="closeModal('modal-video-project')">&times;</button>
+            </div>
+            <form id="form-video-project">
+                <input type="hidden" id="video-id">
+                <div class="form-group">
+                    <label class="form-label" for="vid-title">Video Title</label>
+                    <input type="text" id="vid-title" class="form-input" placeholder="Cyberpunk trailer" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="vid-desc">Short Description</label>
+                    <textarea id="vid-desc" class="form-input"
+                        placeholder="VFX composition notes, timeline, editing software..." required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="vid-thumbnail">Thumbnail Image URL</label>
+                        <input type="url" id="vid-thumbnail" class="form-input"
+                            placeholder="https://images.unsplash.com/..." required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="vid-link">Video/YouTube Link</label>
+                        <input type="url" id="vid-link" class="form-input" placeholder="https://youtube.com/watch?v=..."
+                            required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="vid-category">Category</label>
+                    <input type="text" id="vid-category" class="form-input"
+                        placeholder="e.g. Motion Graphics / Commercial" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary"
+                        onclick="closeModal('modal-video-project')">Cancel</button>
+                    <button type="submit" class="btn-primary" style="width:auto; margin:0;">Save Video</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Success/Error alerts -->
+    <div id="toast-notification" class="notification-toast">
+        Saved successfully!
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
